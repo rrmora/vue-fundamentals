@@ -2,7 +2,8 @@
 <div>
   <h2>{{ customTitle }}</h2>
   <p>{{counter}} <sup>2</sup> = {{ squereCounter }}</p>
-<div>
+  <p data-testid="counter">{{counter}}</p>
+<div class="btn-button">
   <button @click="increase()" class="btn">+ 1</button>
   <button @click="decrease()" class="btn">- 1</button>
 </div>
@@ -39,11 +40,9 @@ export default {
     },
     computed: {
       squereCounter() {
-        console.log("compured squerecounter")
         return this.counter * this.counter
       },
       customTitle() {
-        console.log(this.title)
         return this.title || 'Counter'
       }
     }
